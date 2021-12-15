@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^sitemap.xml$ sitemap/sitemap-agc.php?url=$1 [L]
+RewriteRule ^(.*).xml$ sitemap/sitemap-domain.php?url=$1 [L]

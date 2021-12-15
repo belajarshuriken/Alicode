@@ -1,0 +1,20 @@
+Paste kedalam .htaccess yang ada di public folder:
+
+#Jika ingin menggunakan sitemap index
+RewriteEngine On
+RewriteBase /
+RewriteRule ^sitemap.xml$ sitemap/sitemap-index.php?url=$1 [L]
+RewriteRule ^prod_([0-9-]+).xml$ sitemap/sitemap-agc.php?url=$1 [L]
+RewriteRule ^(.*).xml$ sitemap/sitemap-domain.php?url=$1 [L]
+#---
+
+-------------------------------------------------------------------
+
+Paste kedalam .htaccess yang ada di public folder:
+
+#Tanpa menggunakan sitemap index
+RewriteEngine On
+RewriteBase /
+RewriteRule ^sitemap.xml$ sitemap/sitemap-agc.php?url=$1 [L]
+RewriteRule ^(.*).xml$ sitemap/sitemap-domain.php?url=$1 [L]
+#---
